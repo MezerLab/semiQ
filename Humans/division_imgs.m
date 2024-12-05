@@ -32,6 +32,7 @@ T1w = T1w.data;
 load(fullfile(nii_dir,'TEs.mat'),'TE_PD','TE_T2') 
 
 T1woverT2w_path = fullfile(nii_dir,'T1woverT2w.nii.gz');
+T1woverlnT2w_path = fullfile(nii_dir,'T1woverlnT2w.nii.gz');
 T1woverPDw_path = fullfile(nii_dir,'T1woverPDw.nii.gz');
 lnT2woverPDw_path = fullfile(nii_dir,'lnT2woverPDw.nii.gz');
 
@@ -41,6 +42,12 @@ if ~isfile(T1woverT2w_path)
     T1woverT2w(BM==1) = double(T1w(BM==1))./double(T2w(BM==1));
     T1woverT2w(BM==0) = 0;
     dtiWriteNiftiWrapper(T1woverT2w,xform,T1woverT2w_path);
+end
+if ~isfile(T1woverlnT2w_path)
+    T1woverlnT2w = T1w;
+    T1woverlnT2w(BM==1) = double(T1w(BM==1))./log(double(T2w(BM==1)));
+    T1woverlnT2w(BM==0) = 0;
+    dtiWriteNiftiWrapper(T1woverlnT2w,xform,T1woverlnT2w_path);
 end
 if ~isfile(T1woverPDw_path)
     T1woverPDw = T1w;
