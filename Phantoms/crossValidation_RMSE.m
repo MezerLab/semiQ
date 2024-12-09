@@ -1,4 +1,17 @@
 function [meanRMSE] = crossValidation_RMSE(a,b,holdOutFraction,numIterations)
+% This function performs cross-validation to compute the average Root Mean 
+% Squared Error (RMSE) between two variables, a and b, over multiple iterations.
+%
+% INPUTS:
+%       - a: Independent variable (column vector or converted to one).
+%       - b: Dependent variable (column vector or converted to one).
+%       - holdOutFraction (optional): Fraction of data to hold out for 
+%       testing in each iteration. Default is 10%.
+%       - numIterations (optional): Number of iterations for 
+%       cross-validation. Default is 1000.
+% OUTPUTS:
+%       - meanRMSE: The average RMSE over all cross-validation iterations,
+%       which gives a robust estimate of the model s predictive performance.
 
 % Assuming a and b are column vectors
 if size(a,2) > 1
