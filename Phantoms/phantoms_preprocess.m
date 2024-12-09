@@ -87,6 +87,18 @@ lnT2woverPDw_sym_TE2 = add_noise(lnT2woverPDw_sym_TE2,noise);
 lnT2woverPDw_sym_TE3 = sym_ln_T2w_over_PDw(T2_sym,TE3);
 lnT2woverPDw_sym_TE3 = add_noise(lnT2woverPDw_sym_TE3,noise);
 
+%% Cross-validation (excluding ddw quivettes):
+
+% For R1 correlations, we calculate the RMSEs:
+[RMSE1] = crossValidation_RMSE([t_lipids.T1w{[1:2,4:5],:}],[t_lipids.R1{[1:2,4:5],:}],0.10,1000);
+[RMSE2] = crossValidation_RMSE([t_lipids.T1woverT2w{[1:2,4:5],:}],[t_lipids.R1{[1:2,4:5],:}],0.10,1000);
+[RMSE3] = crossValidation_RMSE([t_lipids.T1woverPDw{[1:2,4:5],:}],[t_lipids.R1{[1:2,4:5],:}],0.10,1000);
+
+% For R2 correlations, we calculate the RMSEs:
+[RMSE4] = crossValidation_RMSE([t_lipids.R2w{[1:2,4:5],:}],[t_lipids.R2{[1:2,4:5],:}],0.10,1000);
+[RMSE5] = crossValidation_RMSE([t_lipids.T1woverT2w{[1:2,4:5],:}],[t_lipids.R2{[1:2,4:5],:}],0.10,1000);
+[RMSE6] = crossValidation_RMSE([t_lipids.lnT2woverPDw{[1:2,4:5],:}],[t_lipids.R2{[1:2,4:5],:}],0.10,1000);
+
 %% Functions
 
 function [noisy_signal] = add_noise(signal, snr_dB)
