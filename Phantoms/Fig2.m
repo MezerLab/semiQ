@@ -22,7 +22,7 @@ for i = [1,2,4,5]
     x6 = [x6, t_lipids.T1woverlnT2w{i}];
 end
 
-[Rsquared]=plot_mdl([x1;y1],color);
+[Rsquared]=plot_mdl([x1;y1],color,1);
 ax=gca();
 ax.YLim = ylim1;
 ax.FontSize = 14;
@@ -34,7 +34,7 @@ xlabel('T1w [a.u.]',FontSize=fontsize);
 ylabel('R1 [S^-^1]',Interpreter='tex',FontSize=fontsize);
 
 subplot(2,3,2);
-[Rsquared]=plot_mdl([x2;y1],color);
+[Rsquared]=plot_mdl([x2;y1],color,1);
 ax=gca();
 ax.YLim = ylim1;
 ax.FontSize = 14;
@@ -46,7 +46,7 @@ xlabel('T1w/T2w [a.u.]',FontSize=fontsize);
 ylabel('R1 [S^-^1]',Interpreter='tex',FontSize=fontsize);
 
 subplot(2,3,3);
-[Rsquared]=plot_mdl([x3;y1],color);
+[Rsquared]=plot_mdl([x3;y1],color,1);
 ax=gca();
 ax.YLim = ylim1;
 ax.FontSize = 14;
@@ -58,7 +58,7 @@ xlabel('T1w/PDw [a.u.]',FontSize=fontsize);
 ylabel('R1 [S^-^1]',Interpreter='tex',FontSize=fontsize);
 
 subplot(2,3,4);
-[Rsquared]=plot_mdl([x4;y2],color);
+[Rsquared]=plot_mdl([x4;y2],color,1);
 ax=gca();
 ax.YLim = ylim2;
 ax.FontSize = 14;
@@ -70,7 +70,7 @@ xlabel('R2w [a.u.]',FontSize=fontsize);
 ylabel('R2 [S^-^1]',Interpreter='tex',FontSize=fontsize);
 
 subplot(2,3,5);
-[Rsquared]=plot_mdl([x2;y2],color);
+[Rsquared]=plot_mdl([x2;y2],color,1);
 ax=gca();
 ax.YLim = ylim2;
 ax.FontSize = 14;
@@ -82,7 +82,7 @@ xlabel('T1w/T2w [a.u.]',FontSize=fontsize);
 ylabel('R2 [S^-^1]',Interpreter='tex',FontSize=fontsize);
 
 subplot(2,3,6);
-[Rsquared]=plot_mdl([x5;y2],color);
+[Rsquared]=plot_mdl([x5;y2],color,1);
 ax=gca();
 ax.YLim = ylim2;
 ax.FontSize = 14;
