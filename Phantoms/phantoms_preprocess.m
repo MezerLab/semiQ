@@ -1,3 +1,6 @@
+%% Load the table:
+load("phantom_table.mat");
+
 %% Other weighted metrics:
 
 T1woverPDw = cellfun(@(x,y) (x./y),t_lipids.T1w,t_lipids.PDw,'UniformOutput',false);
