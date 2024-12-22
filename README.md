@@ -1,5 +1,5 @@
 # semiQ
-**semiQ** is a software package designed to calculate the five new semi-quantitative quantifiers described in the following article: "Bridging the Gap between Clinical and Quantitative MRI". It contains example data from both phantoms and humans.
+**semiQ** is a software package designed to calculate the five new semi-quantitative quantifiers described in the following article: "[Approximating R1 and R2: A Quantitative Approach to Clinical Weighted MRI]([url](https://onlinelibrary.wiley.com/doi/10.1002/hbm.70102))". It contains example data from both phantoms and humans.
 For more information, please contact:
 
     Aviv Mezer: aviv.mezer(AT)elsc.huji.ac.il
